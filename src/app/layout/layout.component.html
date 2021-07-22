@@ -1,24 +1,24 @@
-<div class="table-responsive">
-  <table class="table table-bordered">
-    <thead>
-      <tr>
-        <th>Título</th>
-        <th>Año</th>
-        <th>Director</th>
-        <th>Escritor</th>
-        <th>Género</th>
-        <th>Duración</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let fila of filas">
-        <td>{{fila.titulo}}</td>
-        <td>{{fila.annio}}</td>
-        <td>{{fila.director}}</td>
-        <td>{{fila.escritor}}</td>
-        <td>{{fila.genero}}</td>
-        <td>{{fila.duracion}}</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+<ngx-datatable
+  class="bootstrap"
+  [rows]="filas"
+  [columns]="columnas"
+  [reorderable]="true"
+  [columnMode]="columnMode"
+  [headerHeight]="50"
+  [footerHeight]="50"
+  [rowHeight]="50"
+  [scrollbarH]="false"
+  [scrollbarV]="false">
+  <ngx-datatable-column name="Título" prop="titulo">
+  </ngx-datatable-column>
+  <ngx-datatable-column name="Año" prop="annio">
+  </ngx-datatable-column>
+  <ngx-datatable-column name="Director" prop="director">
+  </ngx-datatable-column>
+  <ngx-datatable-column name="Escritor" prop="escritor">
+  </ngx-datatable-column>
+  <ngx-datatable-column name="Género" prop="genero">
+  </ngx-datatable-column>
+  <ngx-datatable-column name="Duración (min)" prop="duracion">
+  </ngx-datatable-column>
+</ngx-datatable>

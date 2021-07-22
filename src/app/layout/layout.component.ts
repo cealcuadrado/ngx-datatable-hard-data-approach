@@ -1,5 +1,6 @@
 import { DisenoPelicula } from './../shared/interfaces/diseno-pelicula';
 import { Component, OnInit } from '@angular/core';
+import { ColumnMode } from '@swimlane/ngx-datatable';
 
 @Component({
   selector: 'app-layout',
@@ -9,6 +10,16 @@ import { Component, OnInit } from '@angular/core';
 export class LayoutComponent implements OnInit {
 
   filas: DisenoPelicula[];
+  columnMode = ColumnMode.force;
+
+  columnas = [
+    { name: 'Título', prop: 'titulo'},
+    { name: 'Año', prop: 'annio' },
+    { name: 'Director', prop: 'director' },
+    { name: 'Escritor', prop: 'escritor' },
+    { name: 'Género', prop: 'genero' },
+    { name: 'Duración (min)', prop: 'duracion'}
+  ];
 
   constructor() { }
 
